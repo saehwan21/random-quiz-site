@@ -20,7 +20,7 @@ def main():
             st.session_state.quiz = load_random_question()
             st.rerun()
     else:
-        if st.session_state.quiz is None:
+        if st.session_state.quiz is N   one:
             st.session_state.quiz = load_random_question()
         
         question = st.session_state.quiz['문제']
@@ -51,7 +51,7 @@ def main():
 
 def load_random_question():
     df = pd.read_excel("study_question_template.xlsx")
-    return df.sample(1).iloc[0]
+    return df.sample(n=1).iloc[0]
 
 if __name__ == "__main__":
     main()
