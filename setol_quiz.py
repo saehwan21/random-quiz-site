@@ -50,8 +50,15 @@ def main():
                 st.rerun()
 
 def load_random_question():
-    df = pd.read_excel("study_question_template.xlsx")
-    return df.sample(n=1).iloc[0]
+    try:
+        df = pd.read_excel("study_question_template.xlsx")
+        if df.empty:
+            st.error("엑셀 파일이 비어있습니다. 문제 데이터를 확인해주세요.")
+            return None
+        return df.sample(n=1).iloc[0]
+    except Exception as e:
+        st.error(f"엑셀 파일을 로드하는 데 실패했습니다: {e}")
+        return None
 
 if __name__ == "__main__":
     main()
