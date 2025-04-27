@@ -51,7 +51,7 @@ def main():
 
 def load_random_question():
     try:
-        df = pd.read_excel("study_question_template.xlsx")
+        df = pd.read_excel("study_question_template2.xlsx")
         if df.empty:
             st.error("엑셀 파일이 비어있습니다. 문제 데이터를 확인해주세요.")
             return None
