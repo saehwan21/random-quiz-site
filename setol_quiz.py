@@ -20,7 +20,7 @@ def main():
             st.session_state.quiz = load_random_question()
             st.rerun()
     else:
-        if st.session_state.quiz is N   one:
+        if st.session_state.quiz is None:
             st.session_state.quiz = load_random_question()
         
         question = st.session_state.quiz['문제']
